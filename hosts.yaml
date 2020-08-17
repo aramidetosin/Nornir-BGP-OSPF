@@ -1,0 +1,33 @@
+---
+R1:
+    hostname: 192.168.1.191
+    data:
+        asn: 65001
+R2:
+    hostname: 192.168.1.192
+    data:
+        asn: 65001
+R3:
+    hostname: 192.168.1.193
+    data:
+        asn: 65001
+R4:
+    hostname: 192.168.1.194
+    data:
+        asn: 65001
+R5:
+    hostname: 192.168.1.195
+    data:
+        asn: 65001
+R6:
+    hostname: 192.168.1.196
+    data:
+        asn: 65001
+R7:
+    hostname: 192.168.1.197
+    data:
+        asn: 65001
+R8:
+    hostname: 192.168.1.198
+    data:
+        asn: 65001

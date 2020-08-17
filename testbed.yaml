@@ -1,0 +1,111 @@
+---
+testbed:
+  credentials:
+    default:
+      username: 'cisco'
+      password: 'cisco'
+devices:
+  R1:
+    alias: R1
+    os: iosxe
+    type: IOSv
+    connections:
+      defaults:
+        class: unicon.Unicon
+      console:
+        protocol: ssh
+        ip: 192.168.1.191
+    custom:
+      abstration:
+         order: [os, type]
+  R2:
+    alias: R2
+    os: iosxe
+    type: IOSv
+    connections:
+      defaults:
+        class: unicon.Unicon
+      console:
+        protocol: ssh
+        ip: 192.168.1.192
+    custom:
+      abstration:
+         order: [os, type]
+  R3:
+    alias: R3
+    os: iosxe
+    type: IOSv
+    connections:
+      defaults:
+        class: unicon.Unicon
+      console:
+        protocol: ssh
+        ip: 192.168.1.193
+    custom:
+      abstration:
+         order: [os, type]
+  R4:
+    alias: R4
+    os: iosxe
+    type: IOSv
+    connections:
+      defaults:
+        class: unicon.Unicon
+      console:
+        protocol: ssh
+        ip: 192.168.1.194
+    custom:
+      abstration:
+         order: [os, type]
+  R5:
+    alias: R5
+    os: iosxe
+    type: IOSv
+    connections:
+      defaults:
+        class: unicon.Unicon
+      console:
+        protocol: ssh
+        ip: 192.168.1.195
+    custom:
+      abstration:
+         order: [os, type]
+  R6:
+    alias: R6
+    os: iosxe
+    type: IOSv
+    connections:
+      defaults:
+        class: unicon.Unicon
+      console:
+        protocol: ssh
+        ip: 192.168.1.196
+    custom:
+      abstration:
+         order: [os, type]
+  R7:
+    alias: R7
+    os: iosxe
+    type: IOSv
+    connections:
+      defaults:
+        class: unicon.Unicon
+      console:
+        protocol: ssh
+        ip: 192.168.1.197
+    custom:
+      abstration:
+         order: [os, type]
+  R8:
+    alias: R8
+    os: iosxe
+    type: IOSv
+    connections:
+      defaults:
+        class: unicon.Unicon
+      console:
+        protocol: ssh
+        ip: 192.168.1.198
+    custom:
+      abstration:
+         order: [os, type]

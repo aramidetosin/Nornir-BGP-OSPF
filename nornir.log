@@ -1,0 +1,401 @@
+2020-08-15 20:38:34,158 -  nornir.core -     INFO -        run() - Running task 'underlay' with args {} on 8 hosts
+2020-08-15 20:40:12,929 -  nornir.core -     INFO -        run() - Running task 'underlay' with args {} on 8 hosts
+2020-08-15 20:42:34,633 -  nornir.core -     INFO -        run() - Running task 'underlay' with args {} on 8 hosts
+2020-08-15 21:05:01,162 -  nornir.core -     INFO -        run() - Running task 'underlay' with args {} on 8 hosts
+2020-08-15 21:10:33,449 -  nornir.core -     INFO -        run() - Running task 'underlay' with args {} on 8 hosts
+2020-08-15 21:11:32,593 -  nornir.core -     INFO -        run() - Running task 'underlay' with args {} on 8 hosts
+2020-08-15 21:11:43,223 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/nornir/plugins/tasks/networking/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1620, in send_config_set
+    output += self.exit_config_mode()
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/cisco_base_connection.py", line 55, in exit_config_mode
+    return super(CiscoBaseConnection, self).exit_config_mode(
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1531, in exit_config_mode
+    if self.check_config_mode():
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/cisco/cisco_ios.py", line 31, in check_config_mode
+    return super(CiscoIosBase, self).check_config_mode(
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/cisco_base_connection.py", line 37, in check_config_mode
+    return super(CiscoBaseConnection, self).check_config_mode(
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1496, in check_config_mode
+    self.write_channel(self.RETURN)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 422, in write_channel
+    self._write_channel(out_data)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 384, in _write_channel
+    self.remote_conn.sendall(write_bytes(out_data, encoding=self.encoding))
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/paramiko/channel.py", line 846, in sendall
+    sent = self.send(s)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/paramiko/channel.py", line 801, in send
+    return self._send(s, m)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/paramiko/channel.py", line 1198, in _send
+    raise socket.error("Socket is closed")
+OSError: Socket is closed
+
+2020-08-15 21:11:43,223 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'underlay' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/underlay.py", line 14, in underlay
+    deploy_ospf = task.run(netmiko_send_config, config_commands=ospf_commands)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/nornir/core/task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_config at 0x7fcfd5be2af0> (failed)
+
+
+2020-08-15 21:11:43,524 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/nornir/plugins/tasks/networking/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1620, in send_config_set
+    output += self.exit_config_mode()
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/cisco_base_connection.py", line 55, in exit_config_mode
+    return super(CiscoBaseConnection, self).exit_config_mode(
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1531, in exit_config_mode
+    if self.check_config_mode():
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/cisco/cisco_ios.py", line 31, in check_config_mode
+    return super(CiscoIosBase, self).check_config_mode(
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/cisco_base_connection.py", line 37, in check_config_mode
+    return super(CiscoBaseConnection, self).check_config_mode(
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1496, in check_config_mode
+    self.write_channel(self.RETURN)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 422, in write_channel
+    self._write_channel(out_data)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 384, in _write_channel
+    self.remote_conn.sendall(write_bytes(out_data, encoding=self.encoding))
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/paramiko/channel.py", line 846, in sendall
+    sent = self.send(s)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/paramiko/channel.py", line 801, in send
+    return self._send(s, m)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/paramiko/channel.py", line 1198, in _send
+    raise socket.error("Socket is closed")
+OSError: Socket is closed
+
+2020-08-15 21:11:43,524 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/nornir/plugins/tasks/networking/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1620, in send_config_set
+    output += self.exit_config_mode()
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/cisco_base_connection.py", line 55, in exit_config_mode
+    return super(CiscoBaseConnection, self).exit_config_mode(
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1531, in exit_config_mode
+    if self.check_config_mode():
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/cisco/cisco_ios.py", line 31, in check_config_mode
+    return super(CiscoIosBase, self).check_config_mode(
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/cisco_base_connection.py", line 37, in check_config_mode
+    return super(CiscoBaseConnection, self).check_config_mode(
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1496, in check_config_mode
+    self.write_channel(self.RETURN)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 422, in write_channel
+    self._write_channel(out_data)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 384, in _write_channel
+    self.remote_conn.sendall(write_bytes(out_data, encoding=self.encoding))
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/paramiko/channel.py", line 846, in sendall
+    sent = self.send(s)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/paramiko/channel.py", line 801, in send
+    return self._send(s, m)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/paramiko/channel.py", line 1198, in _send
+    raise socket.error("Socket is closed")
+OSError: Socket is closed
+
+2020-08-15 21:11:43,525 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'underlay' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/underlay.py", line 14, in underlay
+    deploy_ospf = task.run(netmiko_send_config, config_commands=ospf_commands)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/nornir/core/task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_config at 0x7fcfd5be2af0> (failed)
+
+
+2020-08-15 21:11:43,525 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'underlay' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/underlay.py", line 14, in underlay
+    deploy_ospf = task.run(netmiko_send_config, config_commands=ospf_commands)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/nornir/core/task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_config at 0x7fcfd5be2af0> (failed)
+
+
+2020-08-15 21:11:43,629 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/nornir/plugins/tasks/networking/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1620, in send_config_set
+    output += self.exit_config_mode()
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/cisco_base_connection.py", line 55, in exit_config_mode
+    return super(CiscoBaseConnection, self).exit_config_mode(
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1531, in exit_config_mode
+    if self.check_config_mode():
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/cisco/cisco_ios.py", line 31, in check_config_mode
+    return super(CiscoIosBase, self).check_config_mode(
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/cisco_base_connection.py", line 37, in check_config_mode
+    return super(CiscoBaseConnection, self).check_config_mode(
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1496, in check_config_mode
+    self.write_channel(self.RETURN)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 422, in write_channel
+    self._write_channel(out_data)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 384, in _write_channel
+    self.remote_conn.sendall(write_bytes(out_data, encoding=self.encoding))
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/paramiko/channel.py", line 846, in sendall
+    sent = self.send(s)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/paramiko/channel.py", line 801, in send
+    return self._send(s, m)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/paramiko/channel.py", line 1198, in _send
+    raise socket.error("Socket is closed")
+OSError: Socket is closed
+
+2020-08-15 21:11:43,629 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'underlay' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/underlay.py", line 14, in underlay
+    deploy_ospf = task.run(netmiko_send_config, config_commands=ospf_commands)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/nornir/core/task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_config at 0x7fcfd5be2af0> (failed)
+
+
+2020-08-15 21:11:43,778 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/nornir/plugins/tasks/networking/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1620, in send_config_set
+    output += self.exit_config_mode()
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/cisco_base_connection.py", line 55, in exit_config_mode
+    return super(CiscoBaseConnection, self).exit_config_mode(
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1531, in exit_config_mode
+    if self.check_config_mode():
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/cisco/cisco_ios.py", line 31, in check_config_mode
+    return super(CiscoIosBase, self).check_config_mode(
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/cisco_base_connection.py", line 37, in check_config_mode
+    return super(CiscoBaseConnection, self).check_config_mode(
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1496, in check_config_mode
+    self.write_channel(self.RETURN)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 422, in write_channel
+    self._write_channel(out_data)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 384, in _write_channel
+    self.remote_conn.sendall(write_bytes(out_data, encoding=self.encoding))
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/paramiko/channel.py", line 846, in sendall
+    sent = self.send(s)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/paramiko/channel.py", line 801, in send
+    return self._send(s, m)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/paramiko/channel.py", line 1198, in _send
+    raise socket.error("Socket is closed")
+OSError: Socket is closed
+
+2020-08-15 21:11:43,778 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'underlay' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/underlay.py", line 14, in underlay
+    deploy_ospf = task.run(netmiko_send_config, config_commands=ospf_commands)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/nornir/core/task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_config at 0x7fcfd5be2af0> (failed)
+
+
+2020-08-15 21:11:43,790 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/nornir/plugins/tasks/networking/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1620, in send_config_set
+    output += self.exit_config_mode()
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/cisco_base_connection.py", line 55, in exit_config_mode
+    return super(CiscoBaseConnection, self).exit_config_mode(
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1531, in exit_config_mode
+    if self.check_config_mode():
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/cisco/cisco_ios.py", line 31, in check_config_mode
+    return super(CiscoIosBase, self).check_config_mode(
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/cisco_base_connection.py", line 37, in check_config_mode
+    return super(CiscoBaseConnection, self).check_config_mode(
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1496, in check_config_mode
+    self.write_channel(self.RETURN)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 422, in write_channel
+    self._write_channel(out_data)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 384, in _write_channel
+    self.remote_conn.sendall(write_bytes(out_data, encoding=self.encoding))
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/paramiko/channel.py", line 846, in sendall
+    sent = self.send(s)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/paramiko/channel.py", line 801, in send
+    return self._send(s, m)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/paramiko/channel.py", line 1198, in _send
+    raise socket.error("Socket is closed")
+OSError: Socket is closed
+
+2020-08-15 21:11:43,790 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'underlay' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/underlay.py", line 14, in underlay
+    deploy_ospf = task.run(netmiko_send_config, config_commands=ospf_commands)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/nornir/core/task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_config at 0x7fcfd5be2af0> (failed)
+
+
+2020-08-15 21:11:43,809 - nornir.core.task -    ERROR -      start() - Host 'R8': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/nornir/plugins/tasks/networking/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1620, in send_config_set
+    output += self.exit_config_mode()
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/cisco_base_connection.py", line 55, in exit_config_mode
+    return super(CiscoBaseConnection, self).exit_config_mode(
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1531, in exit_config_mode
+    if self.check_config_mode():
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/cisco/cisco_ios.py", line 31, in check_config_mode
+    return super(CiscoIosBase, self).check_config_mode(
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/cisco_base_connection.py", line 37, in check_config_mode
+    return super(CiscoBaseConnection, self).check_config_mode(
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1496, in check_config_mode
+    self.write_channel(self.RETURN)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 422, in write_channel
+    self._write_channel(out_data)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 384, in _write_channel
+    self.remote_conn.sendall(write_bytes(out_data, encoding=self.encoding))
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/paramiko/channel.py", line 846, in sendall
+    sent = self.send(s)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/paramiko/channel.py", line 801, in send
+    return self._send(s, m)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/paramiko/channel.py", line 1198, in _send
+    raise socket.error("Socket is closed")
+OSError: Socket is closed
+
+2020-08-15 21:11:43,810 - nornir.core.task -    ERROR -      start() - Host 'R8': task 'underlay' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/underlay.py", line 14, in underlay
+    deploy_ospf = task.run(netmiko_send_config, config_commands=ospf_commands)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/nornir/core/task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_config at 0x7fcfd5be2af0> (failed)
+
+
+2020-08-15 21:11:43,833 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/nornir/plugins/tasks/networking/netmiko_send_config.py", line 27, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1620, in send_config_set
+    output += self.exit_config_mode()
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/cisco_base_connection.py", line 55, in exit_config_mode
+    return super(CiscoBaseConnection, self).exit_config_mode(
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1531, in exit_config_mode
+    if self.check_config_mode():
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/cisco/cisco_ios.py", line 31, in check_config_mode
+    return super(CiscoIosBase, self).check_config_mode(
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/cisco_base_connection.py", line 37, in check_config_mode
+    return super(CiscoBaseConnection, self).check_config_mode(
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 1496, in check_config_mode
+    self.write_channel(self.RETURN)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 422, in write_channel
+    self._write_channel(out_data)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/netmiko/base_connection.py", line 384, in _write_channel
+    self.remote_conn.sendall(write_bytes(out_data, encoding=self.encoding))
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/paramiko/channel.py", line 846, in sendall
+    sent = self.send(s)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/paramiko/channel.py", line 801, in send
+    return self._send(s, m)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/paramiko/channel.py", line 1198, in _send
+    raise socket.error("Socket is closed")
+OSError: Socket is closed
+
+2020-08-15 21:11:43,833 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'underlay' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/underlay.py", line 14, in underlay
+    deploy_ospf = task.run(netmiko_send_config, config_commands=ospf_commands)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/nornir/core/task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_config at 0x7fcfd5be2af0> (failed)
+
+
+2020-08-15 21:11:47,655 -  nornir.core -     INFO -        run() - Running task 'underlay' with args {} on 8 hosts
+2020-08-17 15:57:08,950 -  nornir.core -     INFO -        run() - Running task 'underlay' with args {} on 8 hosts
+2020-08-17 16:44:23,654 -  nornir.core -     INFO -        run() - Running task 'ospf_check' with args {} on 8 hosts
+2020-08-17 16:44:31,395 - nornir.core.task -    ERROR -      start() - Host 'R8': task 'ospf_check' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/ospfhunter.py", line 22, in ospf_check
+    outer = task.host["brief_facts"]["instance"]
+TypeError: string indices must be integers
+
+2020-08-17 16:44:31,405 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'ospf_check' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/ospfhunter.py", line 22, in ospf_check
+    outer = task.host["brief_facts"]["instance"]
+TypeError: string indices must be integers
+
+2020-08-17 16:44:31,409 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'ospf_check' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/ospfhunter.py", line 22, in ospf_check
+    outer = task.host["brief_facts"]["instance"]
+TypeError: string indices must be integers
+
+2020-08-17 16:44:31,409 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'ospf_check' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/ospfhunter.py", line 22, in ospf_check
+    outer = task.host["brief_facts"]["instance"]
+TypeError: string indices must be integers
+
+2020-08-17 16:44:31,509 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'ospf_check' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/ospfhunter.py", line 22, in ospf_check
+    outer = task.host["brief_facts"]["instance"]
+TypeError: string indices must be integers
+
+2020-08-17 16:44:31,509 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'ospf_check' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/ospfhunter.py", line 22, in ospf_check
+    outer = task.host["brief_facts"]["instance"]
+TypeError: string indices must be integers
+
+2020-08-17 16:44:31,509 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'ospf_check' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/ospfhunter.py", line 22, in ospf_check
+    outer = task.host["brief_facts"]["instance"]
+TypeError: string indices must be integers
+
+2020-08-17 16:44:31,572 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'ospf_check' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/venv/lib/python3.8/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/Users/aramide/Google Drive/Nornir-BGP-OSPF/ospfhunter.py", line 22, in ospf_check
+    outer = task.host["brief_facts"]["instance"]
+TypeError: string indices must be integers
+
