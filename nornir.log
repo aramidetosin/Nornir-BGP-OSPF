@@ -399,3 +399,72 @@ Traceback (most recent call last):
     outer = task.host["brief_facts"]["instance"]
 TypeError: string indices must be integers
 
+2020-09-13 08:14:07,290 -  nornir.core -     INFO -        run() - Running task 'ospf_check' with args {} on 8 hosts
+2020-09-13 08:14:18,102 - nornir.core.task -    ERROR -      start() - Host 'R5': task 'ospf_check' failed with traceback:
+Traceback (most recent call last):
+  File "/home/gns3/.local/lib/python3.6/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/home/gns3/Nornir-BGP-OSPF/ospfhunter.py", line 22, in ospf_check
+    outer = task.host["brief_facts"]["instance"]
+TypeError: string indices must be integers
+
+2020-09-13 08:14:18,103 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'ospf_check' failed with traceback:
+Traceback (most recent call last):
+  File "/home/gns3/.local/lib/python3.6/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/home/gns3/Nornir-BGP-OSPF/ospfhunter.py", line 22, in ospf_check
+    outer = task.host["brief_facts"]["instance"]
+TypeError: string indices must be integers
+
+2020-09-13 08:14:18,132 - nornir.core.task -    ERROR -      start() - Host 'R7': task 'ospf_check' failed with traceback:
+Traceback (most recent call last):
+  File "/home/gns3/.local/lib/python3.6/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/home/gns3/Nornir-BGP-OSPF/ospfhunter.py", line 22, in ospf_check
+    outer = task.host["brief_facts"]["instance"]
+TypeError: string indices must be integers
+
+2020-09-13 08:14:18,224 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'ospf_check' failed with traceback:
+Traceback (most recent call last):
+  File "/home/gns3/.local/lib/python3.6/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/home/gns3/Nornir-BGP-OSPF/ospfhunter.py", line 22, in ospf_check
+    outer = task.host["brief_facts"]["instance"]
+TypeError: string indices must be integers
+
+2020-09-13 08:14:18,234 - nornir.core.task -    ERROR -      start() - Host 'R8': task 'ospf_check' failed with traceback:
+Traceback (most recent call last):
+  File "/home/gns3/.local/lib/python3.6/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/home/gns3/Nornir-BGP-OSPF/ospfhunter.py", line 22, in ospf_check
+    outer = task.host["brief_facts"]["instance"]
+TypeError: string indices must be integers
+
+2020-09-13 08:14:18,240 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'ospf_check' failed with traceback:
+Traceback (most recent call last):
+  File "/home/gns3/.local/lib/python3.6/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/home/gns3/Nornir-BGP-OSPF/ospfhunter.py", line 22, in ospf_check
+    outer = task.host["brief_facts"]["instance"]
+TypeError: string indices must be integers
+
+2020-09-13 08:14:18,380 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'ospf_check' failed with traceback:
+Traceback (most recent call last):
+  File "/home/gns3/.local/lib/python3.6/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/home/gns3/Nornir-BGP-OSPF/ospfhunter.py", line 22, in ospf_check
+    outer = task.host["brief_facts"]["instance"]
+TypeError: string indices must be integers
+
+2020-09-13 08:14:18,426 - nornir.core.task -    ERROR -      start() - Host 'R6': task 'ospf_check' failed with traceback:
+Traceback (most recent call last):
+  File "/home/gns3/.local/lib/python3.6/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/home/gns3/Nornir-BGP-OSPF/ospfhunter.py", line 22, in ospf_check
+    outer = task.host["brief_facts"]["instance"]
+TypeError: string indices must be integers
+
+2020-09-13 08:15:38,914 -  nornir.core -     INFO -        run() - Running task 'ospf_check' with args {} on 8 hosts
+2020-09-13 08:22:24,167 -  nornir.core -     INFO -        run() - Running task 'ospf_check' with args {} on 8 hosts
+2020-09-13 08:23:21,550 -  nornir.core -     INFO -        run() - Running task 'ospf_check' with args {} on 8 hosts
+2020-09-13 08:24:36,478 -  nornir.core -     INFO -        run() - Running task 'ospf_check' with args {} on 8 hosts

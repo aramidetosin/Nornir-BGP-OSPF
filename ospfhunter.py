@@ -33,29 +33,32 @@ def ospf_check(task):
             area_type = ip_ospf_instance[area]['area_type']
             try:
                 for ospf_intf in interfaces:
-                    ipaddr = interfaces[ospf_intf]['ip_address']
-                    mtu = interface_outer[ospf_intf]['mtu']
-                    neigh_inner = neigh_outer[ospf_intf]['neighbors']
-                    for key in neigh_inner:
-                        state = neigh_inner[key]['state']
-                        neigh_ip = neigh_inner[key]['address']
-                        good_output = (f"{task.host}: {ospf_intf}"\
-                                f" is in Area {short_area} with IP: {ipaddr}"\
-                                f" - neighboring {neigh_ip}")
+                    if "Lo" in ospf_intf:
+                        continue
+                    else:
+                        ipaddr = interfaces[ospf_intf]['ip_address']
+                        mtu = interface_outer[ospf_intf]['mtu']
+                        neigh_inner = neigh_outer[ospf_intf]['neighbors']
+                        for key in neigh_inner:
+                            state = neigh_inner[key]['state']
+                            neigh_ip = neigh_inner[key]['address']
+                            good_output = (f"{task.host}: {ospf_intf}"\
+                                    f" is in Area {short_area} with IP: {ipaddr}"\
+                                    f" - neighboring {neigh_ip}")
 
-                        bad_output = (f"ERROR: {task.host}:"\
-                                f" {ospf_intf} (IP = {ipaddr} | MTU = {mtu})"\
-                                f" is in Area {short_area} (Type: {area_type})"\
-                                "- neighbor in DOWN/EXSTART!")
+                            bad_output = (f"ERROR: {task.host}:"\
+                                    f" {ospf_intf} (IP = {ipaddr} | MTU = {mtu})"\
+                                    f" is in Area {short_area} (Type: {area_type})"\
+                                    "- neighbor in DOWN/EXSTART!")
 
-                        if "EXSTART" in state:
-                            bad_list.append(bad_output)
-                        elif "DOWN" in state:
-                            bad_list.append(bad_output)
-                        elif "2WAY" in state:
-                            good_list.append(good_output)
-                        elif "FULL" in state:
-                            good_list.append(good_output)
+                            if "EXSTART" in state:
+                                bad_list.append(bad_output)
+                            elif "DOWN" in state:
+                                bad_list.append(bad_output)
+                            elif "2WAY" in state:
+                                good_list.append(good_output)
+                            elif "FULL" in state:
+                                good_list.append(good_output)
 
             except KeyError:
                 bad_output = (f"ERROR: {task.host}:"\
@@ -64,9 +67,9 @@ def ospf_check(task):
                 bad_list.append(bad_output)
 
 results = nr.run(task=ospf_check)
-print("[green][u]******** PASSED ********[/u][/green]\n")
+print(f"[green]******** PASSED ********[/green]\n")
 for good in good_list:
     print(f"[cyan]{good}[/cyan]")
-print("\n[red][u]******** FAILED ********[/u][/red]\n")
+print(f"\n[red]******** FAILED ********[/red]\n")
 for bad in bad_list:
     print(f"[red]{bad}[/red]")
